@@ -22,3 +22,4 @@ This repository contain ".gitignore" so the following rules will apply.
 10.The file "terraform.rc" will be ignored in any directories.
  
 
+
