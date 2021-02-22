@@ -3,22 +3,21 @@
 5. Ознакомьтесь с графическим интерфейсом VirtualBox, посмотрите как выглядит виртуальная машина, которую создал для вас Vagrant, 
 какие аппаратные ресурсы ей выделены. Какие ресурсы выделены по-умолчанию?
 
-Ответ. Настройки по умолчанию: имя,  ssh адрес, ssh имя, метод аутентификации SSH, 1024 MB памяти, 8 MB видеопамяти, 1 CPU
+	Настройки по умолчанию: имя,  ssh адрес, ssh имя, метод аутентификации SSH, 1024 MB памяти, 8 MB видеопамяти, 1 CPU
 
 6. Ознакомьтесь с возможностями конфигурации VirtualBox через Vagrantfile: документация. Как добавить оперативной памяти или 
 ресурсов процессора виртуальной машине?
 
-Ответ.
-a.Изменить Vagrantfile следующим образом:
+* Изменить Vagrantfile следующим образом:
 
-Vagrant.configure("2") do |config|
+	Vagrant.configure("2") do |config|
 
-        config.vm.box = "/Users/ayajirob/Desktop/code/devops-netology/03-sysadmin-01-terminal"
-        config.vm.provider "virtualbox" do |v|
-                v.memory = 2048
-                v.cpus = 2
-        end
-end
+			config.vm.box = "/Users/ayajirob/Desktop/code/devops-netology/03-sysadmin-01-terminal"
+			config.vm.provider "virtualbox" do |v|
+					v.memory = 2048
+					v.cpus = 2
+			end
+	end
 
 b. Ввести команду vagrant up
 
