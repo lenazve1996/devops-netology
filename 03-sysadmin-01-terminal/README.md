@@ -11,7 +11,6 @@
 * Изменить Vagrantfile следующим образом:
 
 	Vagrant.configure("2") do |config|
-
 			config.vm.box = "/Users/ayajirob/Desktop/code/devops-netology/03-sysadmin-01-terminal"
 			config.vm.provider "virtualbox" do |v|
 					v.memory = 2048
@@ -19,7 +18,7 @@
 			end
 	end
 
-b. Ввести команду vagrant up
+* Ввести команду vagrant up
 
 7. Команда vagrant ssh из директории, в которой содержится Vagrantfile, позволит вам оказаться внутри виртуальной машины 
 без каких-либо дополнительных настроек. Попрактикуйтесь в выполнении обсуждаемых команд в терминале Ubuntu.
