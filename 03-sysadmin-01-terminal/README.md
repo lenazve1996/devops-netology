@@ -1,8 +1,5 @@
 # Домашнее задание к занятию "3.1. Работа в терминале, лекция 1" :computer:
 
-![Терминал](https://github.com/lenazve1996/imagesforreadme/blob/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202021-02-21%20%D0%B2%2018.14.21.png)
-![Терминал2](https://github.com/lenazve1996/imagesforreadme/blob/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202021-02-21%20%D0%B2%2018.14.34.png)
-
  **5. Ознакомьтесь с графическим интерфейсом VirtualBox, посмотрите как выглядит виртуальная машина, которую создал для вас Vagrant, 
 какие аппаратные ресурсы ей выделены. Какие ресурсы выделены по-умолчанию?**
 
@@ -77,3 +74,6 @@ bash is /bin/bash
 **14. Завершите работу виртуальной машины чтобы не расходовать ресурсы компьютера и/или батарею ноутбука.**
 	
 >Done. logout, vagrant suspend.
+
+![Терминал](https://github.com/lenazve1996/imagesforreadme/blob/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202021-02-21%20%D0%B2%2018.14.21.png)
+![Терминал2](https://github.com/lenazve1996/imagesforreadme/blob/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202021-02-21%20%D0%B2%2018.14.34.png)
