@@ -116,7 +116,7 @@
 
 1. Прикрепите вывод `lsblk`.
 	
-	>Прикрепляю
+	>Done.Прикрепляю
 
 	![lsblk](https://github.com/lenazve1996/imagesforreadme/blob/main/lsblk.png)
 
@@ -138,7 +138,7 @@
 
 1. Сделайте `--fail` на устройство в вашем RAID1 md.
 
-	>Done&
+	>Done.
 
 		agrant@vagrant:~$ sudo mdadm --fail /dev/md127 /dev/sdc1
 
@@ -156,7 +156,7 @@
     0
     ```
 	>Done.
-	
+
 	![gzip -t](https://github.com/lenazve1996/imagesforreadme/blob/main/gzip%20-t%20.png)
 
 1. Погасите тестовый хост, `vagrant destroy`.
