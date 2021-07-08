@@ -87,8 +87,11 @@ UNCONN          0               0                        127.0.0.53%lo:domain   
 1. Попробуйте собрать дамп трафика с помощью `tcpdump` на основном интерфейсе вашей виртуальной машины и посмотреть его через tshark или Wireshark (можно ограничить число пакетов `-c 100`). Встретились ли вам какие-то установленные флаги Internet Protocol (не флаги TCP, а флаги IP)? Узнайте, какие флаги бывают. Как на самом деле называется стандарт Ethernet, фреймы которого попали в ваш дамп? Можно ли где-то в дампе увидеть OUI?
 
 	> Флаги IP не встретились.
+
 	> Бывают такие флаги: Reserved, Nonce, Congestion Window Reduced (CWR), ECN-Echo, Urgent, Acknowledgment, Push, Reset, Syn, Fin
+
 	>  Стандарт - Ethernet-II
+	
 	> OUI увидеть можно:
 
 	![OUI](https://github.com/lenazve1996/imagesforreadme/blob/main/OUI.png)
