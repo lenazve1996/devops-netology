@@ -17,16 +17,16 @@
 	> Написать такой код:
 
 		#!/usr/bin/env python3
-		a = '1'
+		a = 1
 		b = '2'
-		c = a + b
+		c = str(a) + b
 	* Как получить для переменной c значение 3?
 	> Написать такой код:
 
 		#!/usr/bin/env python3
 		a = 1
-		b = 2
-		c = a + b
+		b = '2'
+		c = a + int(b)
 
 
 
@@ -61,7 +61,7 @@
 	for result in result_os.split('\n'):
 		if result.find('modified') != -1:
 			prepare_result = result.replace('\tmodified:   ', '')
-			print(prepare_result + "\n/Desktop/code/devops-netology/" + prepare_result)
+			print(prepare_result + "\n~/netology/sysadm-homeworks" + prepare_result)
 	```
 	
 
@@ -92,41 +92,40 @@
 
 	> Ответ:
 	```python
-		#!/usr/bin/env python3
+	#!/usr/bin/env python3
 
-		import socket
-		import os
+	import socket
+	import os
 
-		names = ["drive.google.com", "mail.google.com", "google.com"]
-		i = 0
-		n = 1
-		new_file = []
-		if os.path.exists("test.txt"):
-			f = open("test.txt", "r+")
-		else:
-			f = open("test.txt", "w+")
-
-		while i < len(names):
-			ip = socket.gethostbyname(names[i])
-			str_for_printing = names[i] + " - " + str(ip) + '\n'
-			line = f.readline()
-			if not line:
-				#f.write(str_for_printing)
-				print(str_for_printing)
-				new_file.append(str_for_printing)
-			elif line == str_for_printing:
-				print(str_for_printing)
-				new_file.append(str_for_printing)
-			elif line != str_for_printing:
-				line_lst = line.split()
-				str_for_printing = "[ERROR] " + names[i] + " IP mismatch " + line_lst[2] + " " + str(ip) + '\n'
-				print(str_for_printing)
-				new_file.append(str_for_printing)
-			i = i + 1
-		f.close()
+	names = ["drive.google.com", "mail.google.com", "google.com"]
+	i = 0
+	n = 1
+	new_ip_list = []
+	if os.path.exists("test.txt"):
+		f = open("test.txt", "r+")
+	else:
 		f = open("test.txt", "w+")
-		f.writelines(new_file)
-		f.close()
+
+	while i < len(names):
+		ip = socket.gethostbyname(names[i])
+		new_ip = names[i] + " - " + str(ip) + '\n'
+		old_ip = f.readline()
+		if not old_ip:
+			print(new_ip)
+			new_ip_list.append(new_ip)
+		elif old_ip == new_ip:
+			print(new_ip)
+			new_ip_list.append(new_ip)
+		elif old_ip != new_ip:
+			old_ip_lst = old_ip.split()
+			new_ip = "[ERROR] " + names[i] + " IP mismatch " + old_ip_lst[2] + " " + str(ip) + '\n'
+			print(new_ip)
+			new_ip_list.append(new_ip)
+		i = i + 1
+	f.close()
+	f = open("test.txt", "w+")
+	f.writelines(new_ip_list)
+	f.close()
 	```
 
 ## Дополнительное задание (со звездочкой*) - необязательно к выполнению

@@ -1,3 +1,3 @@
-[ERROR] drive.google.com IP mismatch 172.217.0.14 172.217.20.14
-[ERROR] mail.google.com IP mismatch 142.25.180.197 142.250.180.197
-google.com - 142.250.180.238
+[ERROR] drive.google.com IP mismatch 172.217.9.110 172.217.19.110
+[ERROR] mail.google.com IP mismatch 142.20.201.197 142.250.201.197
+[ERROR] google.com IP mismatch 172.217.19.10 172.217.19.110
