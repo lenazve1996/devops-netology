@@ -79,7 +79,7 @@ AWS предоставляет достаточно много бесплатн�
 
 1. Ссылку на репозиторий с исходной конфигурацией терраформа.
 
-    > https://github.com/lenazve1996/devops-netology/tree/master/02-git-04-tools
+    > https://github.com/lenazve1996/devops-netology/tree/master/terraform
  
 ---
 
