@@ -14,7 +14,7 @@
 
 В качестве результата задания приложите снимок экрана с успешным применением конфигурации.
 
-## Ответ
+## Ответ:
 ![Terraform cloud](https://github.com/lenazve1996/imagesforreadme/blob/main/Terraform%20cloud.png)
 
 ## Задача 2. Написать серверный конфиг для атлантиса. 
@@ -47,6 +47,7 @@
 ## Ответ:
 
 Прикрепляю ссылки (файлы лежат в текущей директории):
+
 [server.yaml](https://github.com/lenazve1996/devops-netology/blob/master/virt_homeworks/07-terraform-04-teamwork/server.yaml)
 
 [atlantis.yaml](https://github.com/lenazve1996/devops-netology/blob/master/virt_homeworks/07-terraform-04-teamwork/atlantis.yaml)
@@ -62,6 +63,6 @@
 В качестве результата задания приложите ссылку на созданный блок конфигураций. 
 
 ## Ответ:
-[module.tf]()
+[module.tf](https://github.com/lenazve1996/devops-netology/blob/master/virt_homeworks/07-terraform-04-teamwork/module.tf)
 
 
