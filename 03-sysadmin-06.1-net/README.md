@@ -48,6 +48,8 @@ HOST: stackoverflow.com
     Через автономную систему [AS8359] (видимо, сиситема провайдера)
     И через автономную сиситему googl'a [AS15169]
 
+        ~$ traceroute -an 8.8.8.8
+
 ![traceroute](https://github.com/lenazve1996/devops-netology/blob/master/03-sysadmin-06.1-net/traceroute.png)
 
 6. Повторите задание 5 в утилите `mtr`. На каком участке наибольшая задержка - delay?
@@ -55,6 +57,7 @@ HOST: stackoverflow.com
     Наибольшая задержка на участке под номером 7 с адресом 108.170.250.83 у автономной сиситемы googl'a AS15169. Задержка отражена в поле `StDev`.
 
         ~$ sudo /usr/local/sbin/mtr -nz 8.8.8.8
+
 ![mtr_output](https://github.com/lenazve1996/devops-netology/blob/master/03-sysadmin-06.1-net/mtr_output.png)
 
 7. Какие DNS сервера отвечают за доменное имя dns.google? Какие A записи? воспользуйтесь утилитой `dig`
