@@ -63,16 +63,19 @@ HOST: stackoverflow.com
 7. Какие DNS сервера отвечают за доменное имя dns.google? Какие A записи? воспользуйтесь утилитой `dig`
 
     ## Ответ:
-     1. корневой сервер: c.root-servers.net 2. авторизованный сервер: ns-tld5.charlestonroadregistry.com 3. авторизованный сервер: ns1.zdns.google 4. Далее А записи, которые уже непосредственно хранят имя хоста и соответствующие ему адреса IPv4: 8.8.8.8 и 8.8.4.4
+    1. корневой сервер: c.root-servers.net
+    2. авторизованный сервер: ns-tld5.charlestonroadregistry.com
+    3. авторизованный сервер: ns1.zdns.google
+    4. Далее А записи, которые уже непосредственно хранят имя хоста и соответствующие ему адреса IPv4: 8.8.8.8 и 8.8.4.4
 
-        ~$ dig +trace @8.8.8.8 dns.google
+            ~$ dig +trace @8.8.8.8 dns.google
 
 ![dig_output](https://github.com/lenazve1996/devops-netology/blob/master/03-sysadmin-06.1-net/dig_output.png)
 
 8. Проверьте PTR записи для IP адресов из задания 7. Какое доменное имя привязано к IP? воспользуйтесь утилитой `dig`
 
     ## Ответ:
-    Привязано доменное имя dns.google
+    Привязано доменное имя `dns.google`
 
         ~>dig -x 8.8.4.4
         ~>dig -x 8.8.8.8
