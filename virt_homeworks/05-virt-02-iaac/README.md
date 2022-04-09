@@ -46,4 +46,4 @@
 ```
 docker ps
 ```
-![Practice](https://github.com/lenazve1996/devops-netology/tree/master/virt_homeworks/05-virt-02-iaac)
+![Practice](https://github.com/lenazve1996/devops-netology/blob/master/virt_homeworks/05-virt-02-iaac/05.02%20Practice.png)
