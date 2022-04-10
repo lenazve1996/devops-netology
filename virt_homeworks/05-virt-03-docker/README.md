@@ -121,7 +121,7 @@ https://hub.docker.com/r/lenazve1996/httpd_imdevops
 
         exit
 
-![Ex.3.Image](https://github.com/lenazve1996/devops-netology/blob/master/virt_homeworks/05-virt-03-docker/Ex.3.Image.png)   
+![Ex.3.Image](https://github.com/lenazve1996/devops-netology/blob/master/virt_homeworks/05-virt-03-docker/Ex.3.%20Image..png)   
 
 ## Задача 4 (*)
 
