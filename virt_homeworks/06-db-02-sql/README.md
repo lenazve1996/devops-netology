@@ -66,7 +66,14 @@
 Приведите:
 - итоговый список БД после выполнения пунктов выше,
 
+![Список БД](https://github.com/lenazve1996/devops-netology/blob/master/virt_homeworks/06-db-02-sql/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D0%91%D0%94.png)
+
 - описание таблиц (describe)
+
+![Описание orders](https://github.com/lenazve1996/devops-netology/blob/master/virt_homeworks/06-db-02-sql/%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20orders.png)
+
+![Описание clients](https://github.com/lenazve1996/devops-netology/blob/master/virt_homeworks/06-db-02-sql/%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20clients.png)
+
 - SQL-запрос для выдачи списка пользователей с правами над таблицами test_db
     
     Внутри test_db выполнить такую команду:
@@ -75,6 +82,7 @@
 
 - список пользователей с правами над таблицами test_db
 
+![Список пользователей](https://github.com/lenazve1996/devops-netology/blob/master/virt_homeworks/06-db-02-sql/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9.png)
 
 ## Задача 3
 
@@ -90,6 +98,8 @@
 |Монитор| 7000|
 |Гитара| 4000|
 
+    INSERT INTO orders VALUES (1, chocolate, 10), (2, 'printer', 3000), (3, 'book', 500), (4, 'monitor', 7000), (5, 'guitar', 4000);
+
 Таблица clients
 
 |ФИО|Страна проживания|
@@ -100,10 +110,21 @@
 |Ронни Джеймс Дио| Russia|
 |Ritchie Blackmore| Russia|
 
+    INSERT INTO clients VALUES (1, 'Ivanov Ivan Ivanovich', 'USA'), (2, 'Petrov Petr Petrovich', 'Canada'), (3, 'Johann Sebastian Bach', 'Japan'), (4, 'Ronnie James Dio', 'Russia'), (5, 'Ritchie Blackmore', 'Russia');
+
 Используя SQL синтаксис:
 - вычислите количество записей для каждой таблицы 
 - приведите в ответе:
     - запросы 
+
+        SELECT MAX(id) FROM orders;
+        SELECT MAX(id) FROM clients;
+
+        Или
+
+        SELECT COUNT(id) FROM orders;
+        SELECT COUNT(id) FROM clients;
+
     - результаты их выполнения.
 
 ## Задача 4
