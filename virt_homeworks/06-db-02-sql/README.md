@@ -127,6 +127,8 @@
 
     - результаты их выполнения.
 
+![Select max()](https://github.com/lenazve1996/devops-netology/blob/master/virt_homeworks/06-db-02-sql/Select%20max().png)
+
 ## Задача 4
 
 Часть пользователей из таблицы clients решили оформить заказы из таблицы orders.
@@ -141,8 +143,14 @@
 
 Приведите SQL-запросы для выполнения данных операций.
 
+        UPDATE clients SET purchase = 3 WHERE second_name = 'Ivanov Ivan Ivanovich';
+        UPDATE clients SET purchase = 4 WHERE second_name = 'Petrov Petr Petrovich';
+        UPDATE clients SET purchase = 5 WHERE second_name = 'Johann Sebastian Bach';
+
 Приведите SQL-запрос для выдачи всех пользователей, которые совершили заказ, а также вывод данного запроса.
- 
+
+    SELECT second_name FROM clients WHERE purchase IS NOT NULL;
+
 Подсказк - используйте директиву `UPDATE`.
 
 ## Задача 5
@@ -151,6 +159,11 @@
 (используя директиву EXPLAIN).
 
 Приведите получившийся результат и объясните что значат полученные значения.
+
+Seq Scan обозначает, что импользуется последовательное блок за блоком чтение из таблицы clients.
+Cost - понятие, которое оценивает затратность операции (1.05 - затраты на получение всех строк из моего запроса).
+Rows - количество возвращаемых строк в результате моего запроса.
+Width - средний размер одной строки в байтах.
 
 ## Задача 6
 
