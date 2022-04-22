@@ -12,8 +12,7 @@
 
 Приведите получившуюся команду или docker-compose манифест.
     
-    $ docker run -d --name 6.2sql -p 5432:5432 -e POSTGRES_PASSWORD=p1ostgresql -v/Users/ayajirob/sql/datbase:/var/lib/postgresql/database -v /Users/ayajirob/sql/backup:/var/lib/postgresql/backup postgres:12
-    docker
+    $ docker run -d --name 6.2sql -e POSTGRES_PASSWORD=p1ostgresql -v/Users/ayajirob/sql/datbase:/var/lib/postgresql/database -v /Users/ayajirob/sql/backup:/var/lib/postgresql/backup postgres:12
 
     $ docker exec -it 6.2sql /bin/sh
 ## Задача 2
@@ -117,13 +116,13 @@
 - приведите в ответе:
     - запросы 
 
-        SELECT MAX(id) FROM orders;
-        SELECT MAX(id) FROM clients;
+            SELECT MAX(id) FROM orders;
+            SELECT MAX(id) FROM clients;
 
         Или
 
-        SELECT COUNT(id) FROM orders;
-        SELECT COUNT(id) FROM clients;
+            SELECT COUNT(id) FROM orders;
+            SELECT COUNT(id) FROM clients;
 
     - результаты их выполнения.
 
@@ -147,11 +146,13 @@
         UPDATE clients SET purchase = 4 WHERE second_name = 'Petrov Petr Petrovich';
         UPDATE clients SET purchase = 5 WHERE second_name = 'Johann Sebastian Bach';
 
+![Изменения в purchase](https://github.com/lenazve1996/devops-netology/blob/master/virt_homeworks/06-db-02-sql/%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B2%20purchase.png)
+
 Приведите SQL-запрос для выдачи всех пользователей, которые совершили заказ, а также вывод данного запроса.
 
-    SELECT second_name FROM clients WHERE purchase IS NOT NULL;
+        SELECT second_name FROM clients WHERE purchase IS NOT NULL;
 
-Подсказк - используйте директиву `UPDATE`.
+![All who ordere smth](https://github.com/lenazve1996/devops-netology/blob/master/virt_homeworks/06-db-02-sql/All%20who%20ordered%20smth.png)
 
 ## Задача 5
 
@@ -160,27 +161,51 @@
 
 Приведите получившийся результат и объясните что значат полученные значения.
 
+### Ответ:
+
+![Explain](https://github.com/lenazve1996/devops-netology/blob/master/virt_homeworks/06-db-02-sql/Explain.png)
+
 Seq Scan обозначает, что импользуется последовательное блок за блоком чтение из таблицы clients.
+
 Cost - понятие, которое оценивает затратность операции (1.05 - затраты на получение всех строк из моего запроса).
+
 Rows - количество возвращаемых строк в результате моего запроса.
+
 Width - средний размер одной строки в байтах.
 
 ## Задача 6
 
 Создайте бэкап БД test_db и поместите его в volume, предназначенный для бэкапов (см. Задачу 1).
 
+    pg_dump test_db > /var/lib/postgresql/backup/test_db.dump
+
 Остановите контейнер с PostgreSQL (но не удаляйте volumes).
+
+    docker stop 6.2sql
 
 Поднимите новый пустой контейнер с PostgreSQL.
 
+    docker run -d --name newsql -e POSTGRES_PASSWORD=p1ostgresql postgres:12
+
+    docker exec -it newsql /bin/sh
+
 Восстановите БД test_db в новом контейнере.
 
-Приведите список операций, который вы применяли для бэкапа данных и восстановления. 
+    docker run -d --name newsql -e POSTGRES_PASSWORD=p1ostgresql -v /Users/ayajirob/sql/backup:/var/lib/postgresql/backup postgres:12
+
+    docker exec -it newsql /bin/sh
+
+    su - postgres
+
+    createdb test_db
+
+    createuser -P test-admin-user
+
+    createuser -P test-simple-user
+
+    psql test_db < /var/lib/postgresql/backup/test_db.dump
+
+
 
 ---
 
-### Как cдавать задание
-
-Выполненное домашнее задание пришлите ссылкой на .md-файл в вашем репозитории.
-
----
