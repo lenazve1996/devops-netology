@@ -61,6 +61,8 @@
 
 Столбец с наибольшим средним значением размера элементов в байтах - это title;
 
+![avg_width](https://github.com/lenazve1996/devops-netology/blob/master/virt_homeworks/06-db-04-postgresql/avg_width.png)
+
 ## Задача 3
 
 Архитектор и администратор БД выяснили, что ваша таблица orders разрослась до невиданных размеров и
@@ -69,18 +71,35 @@
 
 Предложите SQL-транзакцию для проведения данной операции.
 
+    CREATE TABLE orders_1 (CHECK (price > 499)) INHERITS (orders);
+
+    CREATE TABLE orders_2 (CHECK (price <= 499)) INHERITS (orders);
+
+    INSERT INTO orders_1 SELECT * FROM orders WHERE price > 499;
+
+    INSERT INTO orders_2 SELECT * FROM orders WHERE price <= 499;
+
+
 Можно ли было изначально исключить "ручное" разбиение при проектировании таблицы orders?
+
+Можно было создать сразу таблицу c партициями:
+
+    CREATE TABLE orders (id INT, title character varying(80), price INT) PARTITION BY RANGE (price);
+
+    CREATE TABLE orrrders_1 PARTITION OF orrrders FOR VALUES FROM (0) TO (499);
+
+    CREATE TABLE orrrders_2 PARTITION OF orrrders FOR VALUES FROM (499) TO (10000000);
 
 ## Задача 4
 
 Используя утилиту `pg_dump` создайте бекап БД `test_database`.
 
+    pg_dump test_database > /var/lib/postgresql/backup/test_database.dump
+
 Как бы вы доработали бэкап-файл, чтобы добавить уникальность значения столбца `title` для таблиц `test_database`?
 
----
+### Ответ:
+В тесте бекапа нашла строчки, где создается таблица 'orders'. В них в поле создания title добавила тип даннх 'UNIQUE' к уже существующему типу 'character'.
 
-### Как cдавать задание
-
-Выполненное домашнее задание пришлите ссылкой на .md-файл в вашем репозитории.
-
----
+![]()
+![]()
