@@ -99,7 +99,8 @@
 Как бы вы доработали бэкап-файл, чтобы добавить уникальность значения столбца `title` для таблиц `test_database`?
 
 ### Ответ:
-В тесте бекапа нашла строчки, где создается таблица 'orders'. В них в поле создания title добавила тип даннх 'UNIQUE' к уже существующему типу 'character'.
+В тесте бекапа нашла строчки, где создается таблица 'orders'. В них в поле создания title добавила тип даннх 'UNIQUE' к уже существующему типу 'character'. Если восстановить такой исправленный бекап, то title будет уникальным.
 
-![]()
-![]()
+![title_UNIQUE](https://github.com/lenazve1996/devops-netology/blob/master/virt_homeworks/06-db-04-postgresql/title_UNIQUE.png)
+
+![unique_check](https://github.com/lenazve1996/devops-netology/blob/master/virt_homeworks/06-db-04-postgresql/unique_check.png)
