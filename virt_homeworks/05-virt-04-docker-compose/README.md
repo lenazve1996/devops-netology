@@ -29,7 +29,7 @@
 </p>
 
 ### Мой скрин:
-![VM characteristics]()
+![VM characteristics](https://github.com/lenazve1996/devops-netology/blob/master/virt_homeworks/05-virt-04-docker-compose/Grafana.png)
 
 ## Задача 4 (*)
 
